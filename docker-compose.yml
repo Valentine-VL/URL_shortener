@@ -1,0 +1,21 @@
+version: '3'
+services:
+  url_app:
+    build:
+      context: .
+    tty: true
+    container_name: url_app
+    environment:
+      - DATABASE_PATH=mongodb://mongodb:27017
+    depends_on:
+      - mongodb
+    volumes:
+      - ./app.py:/app/app.py
+    command: [ "/bin/bash" ]
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    expose:
+      - "27017"
