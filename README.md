@@ -10,7 +10,7 @@
 ### Installation:
 Run following commands in directory of your choice:
 
-1.       git clone https://github.com/yourusername/url-shortener-app.git
+1.       git clone https://github.com/Valentine-VL/URL_shortener.git
 2.       cd URL_shortener
 3.       docker-compose up --build -d
 
