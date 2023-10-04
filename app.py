@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 import pymongo
 
 SITE = "https://shortlink.com/"
-STORE_TIME = 10
+STORE_TIME = 100
 
 def create_short_url():
     characters = string.ascii_letters + string.digits
@@ -56,14 +56,22 @@ def main():
 
     args = parser.parse_args()
 
-    result = "No parameter were provided"
+    result = ""
+    selected_option = ""
 
     if args.minify:
+        selected_option = "Minified"
         result = insert_minified_url(args.minify)
     elif args.expand:
+        selected_option = "Expanded"
         result = get_expanded_url(args.expand)
 
-    return print(result)
+    output = f"""
+    =================== {selected_option} Url ===================
+    {result}
+    ====================================================
+    """
+    return print(output)
 
 
 if __name__ == "__main__":
