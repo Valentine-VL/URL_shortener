@@ -17,7 +17,7 @@ Run following commands in directory of your choice:
 ### Execute script
 1. Shorten given url then expand it back:
    -     docker exec url_app python app.py --minify=https://www.example.com/path\?q=search
-      NOTE: Please do not forget escape "?" symbol with "\" or wrap whole url in brackets like: 
+      NOTE: Please do not forget escape "?" symbol with "\\" or wrap whole url in brackets like: 
       >--minify="https://www.example.com/path?q=search"
    - copy output url result
    -     docker exec url_app python app.py --expand=output_result_here
